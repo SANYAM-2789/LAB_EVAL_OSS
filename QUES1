@@ -1,0 +1,19 @@
+def find_cmn_ucmn_chars( s1, s2):
+    s1_lower = s1.lower()
+    s2_lower = s2.lower()
+
+    common_chars = ''.join(sorted(set(s1_lower) & set(s2_lower)))
+        
+    uncommon_chars_s1 = ''.join(sorted(set(s1_lower) - set(s2_lower)))
+    uncommon_chars_s2 = ''.join(sorted(set(s2_lower) - set(s1_lower)))
+    
+    if common_chars:
+        print("Yes")
+        print(f"String1: {''.join(sorted(set(s1) & set(s2)))}")
+        print(f"String2: {''.join(sorted(set(s1) - set(s2)) + sorted(set(s2) - set(s1)))}")
+    else:
+        print("No")
+
+
+find_cmn_ucmn_chars("Refer", "Rafael")  
+find_cmn_ucmn_chars("Refer", "Regfree") 
